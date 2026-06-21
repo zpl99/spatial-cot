@@ -1,0 +1,27 @@
+# Secrets — never commit real credentials
+.env
+
+# Knowledge graph caches (rebuild with `python ct_rag.py`)
+*.pkl
+
+# Benchmark datasets (download separately; see README)
+data/map_eval/
+data/poi_qa/
+
+# Experiment outputs
+results/
+*_io.json
+*_cot.json
+*_spatial_cot.json
+*_spatial_cotp.json
+poi_eval_results_*.json
+map_eval_*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor
+.DS_Store
+*.swp

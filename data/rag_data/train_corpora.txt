@@ -1,0 +1,4969 @@
+Q: Which houses are for sale in Utrecht
+
+Concepts:
+- [0] for sale: objectquality (boolean)
+- [1] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [1] houses + [0] for sale → [1_u]
+
+==================================================
+
+Q: Which houses have construction year between 1990 and 2000 in Utrecht
+
+Concepts:
+- [0] construction year: objectquality (interval)
+- [1] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [1] houses + [0] construction year → [1_u]
+
+==================================================
+
+Q: What houses are for sale and within 0.5km from the main roads in Utrecht
+
+Concepts:
+- [0] main roads: object
+- [1] distance to main roads: distField
+- [2] within 0.5km of main roads: boolField
+- [3] for sale: objectquality (boolean)
+- [4] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] main roads → [1]
+2. [1] → [2]
+3. [4] houses + [2] → [4_u]
+4. [4] houses + [3] for sale → [4_u_u]
+5. [4_u] houses + [4_u_u] houses → [4_u_u_u]
+
+==================================================
+
+Q: What houses are for sale and within 1km from the nearest school in Utrecht
+
+Concepts:
+- [0] school: object
+- [1] distance to school: distField
+- [2] within 1km of school: boolField
+- [3] for sale: objectquality (boolean)
+- [4] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] school → [1]
+2. [1] → [2]
+3. [4] houses + [2] → [4_u]
+4. [4] houses + [3] for sale → [4_u_u]
+5. [4_u] houses + [4_u_u] houses → [4_u_u_u]
+
+==================================================
+
+Q: What houses are for sale and within 1km from the nearest supermarket in Utrecht
+
+Concepts:
+- [0] supermarket: object
+- [1] distance to supermarket: distField
+- [2] within 1km of supermarket: boolField
+- [3] for sale: objectquality (boolean)
+- [4] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] supermarket → [1]
+2. [1] → [2]
+3. [4] houses + [2] → [4_u]
+4. [4] houses + [3] for sale → [4_u_u]
+5. [4_u] houses + [4_u_u] houses → [4_u_u_u]
+
+==================================================
+
+Q: What houses are for sale in urban areas in Utrecht
+
+Concepts:
+- [0] urban areas: field (nominal)
+- [1] for sale: objectquality (boolean)
+- [2] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [2] houses + [0] urban areas → [2_u]
+2. [2] houses + [1] for sale → [2_u_u]
+3. [2_u] houses + [2_u_u] houses → [2_u_u_u]
+
+==================================================
+
+Q: What houses are for sale and in neighborhoods with crime rate lower than 50 per 1000 people in Utrecht
+
+Concepts:
+- [0] crime rate: eveconobjconpro (ira)
+- [1] neighborhoods: object
+- [2] for sale: objectquality (boolean)
+- [3] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [1] neighborhoods + [0] crime rate → [1_u]
+2. [3] houses + [1_u] neighborhoods → [3_u_u]
+3. [3] houses + [2] for sale → [3_u_u_u]
+4. [3_u_u] houses + [3_u_u_u] houses → [3_u_u_u_u]
+
+==================================================
+
+Q: What houses are for sale and within 1km from the parks in Utrecht
+
+Concepts:
+- [0] parks: object
+- [1] distance to parks: distField
+- [2] within 1km of parks: boolField
+- [3] for sale: objectquality (boolean)
+- [4] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] parks → [1]
+2. [1] → [2]
+3. [4] houses + [2] → [4_u]
+4. [4] houses + [3] for sale → [4_u_u]
+5. [4_u] houses + [4_u_u] houses → [4_u_u_u]
+
+==================================================
+
+Q: Where are the five star hotels in the Happy Valley ski resort
+
+Concepts:
+- [0] five star hotels: object
+- [1] location of five star hotels: location
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] five star hotels → [1]
+
+==================================================
+
+Q: Which shops are open at 6 pm in Happy Valley ski resort
+
+Concepts:
+- [0] open at: objectquality (interval)
+- [1] shops: object
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [1] shops + [0] open at → [1_u]
+
+==================================================
+
+Q: Which cafes are in forested areas in Happy Valley ski resort
+
+Concepts:
+- [0] forested areas: field (nominal)
+- [1] cafes: object
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [1] cafes + [0] forested areas → [1_u]
+
+==================================================
+
+Q: Where are the ski pistes in Happy Valley ski resort
+
+Concepts:
+- [0] ski pistes: object
+- [1] location of ski pistes: location
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] ski pistes → [1]
+
+==================================================
+
+Q: Where is the most popular ski piste in Happy Valley ski resort
+
+Concepts:
+- [0] ski piste: object
+- [1] location of ski piste: location
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] ski piste → [1]
+
+==================================================
+
+Q: Which ski piste is longest in the Happy Valley
+
+Concepts:
+- [0] ski piste: object
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [0] ski piste → [0_u]
+
+==================================================
+
+Q: Which hotels are within 0.3km of the longest ski piste in Happy Valley ski resort
+
+Concepts:
+- [0] ski piste: object
+- [1] distance to ski piste: distField
+- [2] within 0.3km of ski piste: boolField
+- [3] hotels: object
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] ski piste → [1]
+2. [1] → [2]
+3. [3] hotels + [2] → [3_u]
+
+==================================================
+
+Q: Which neighborhood has the highest crime rate in Amsterdam
+
+Concepts:
+- [0] crime rate: eveconobjconpro (ira)
+- [1] neighborhood: object
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] neighborhood + [0] crime rate → [1_u]
+
+==================================================
+
+Q: Where are the individual crimes in Amsterdam
+
+Concepts:
+- [0] individual crimes: event
+- [1] location of individual crimes: location
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] individual crimes → [1]
+
+==================================================
+
+Q: Which neighborhood has the highest robbery rate in Amsterdam
+
+Concepts:
+- [0] robbery rate: eveconobjconpro (ira)
+- [1] neighborhood: object
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] neighborhood + [0] robbery rate → [1_u]
+
+==================================================
+
+Q: Which neighborhood has the highest arson rate in Amsterdam
+
+Concepts:
+- [0] arson rate: eveconobjconpro (ira)
+- [1] neighborhood: object
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] neighborhood + [0] arson rate → [1_u]
+
+==================================================
+
+Q: Which neighborhood has the highest burglary rate in Amsterdam
+
+Concepts:
+- [0] burglary rate: eveconobjconpro (ira)
+- [1] neighborhood: object
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] neighborhood + [0] burglary rate → [1_u]
+
+==================================================
+
+Q: Which buildings are within 1 minute of driving time from a fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] driving time: network
+- [2] 1 minute service area: serviceObj
+- [3] within 1 minute of fire station: boolField
+- [4] road data: network/object
+- [5] buildings: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire station + [4] road data → [2]
+2. [2] → [3]
+3. [5] buildings + [3] → [5_u]
+
+==================================================
+
+Q: What buildings are within 2 minutes but not within 1 minute of driving time from a fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] driving time: network
+- [2] 1 minute service area: serviceObj
+- [3] within 1 minute of fire station: boolField
+- [4] road data: network/object
+- [5] 1 minute service area: serviceObj
+- [6] within 1 minute of fire station: boolField
+- [7] buildings: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire station + [4] road data → [2]
+2. [2] → [3]
+3. [5] → [6]
+4. [7] buildings + [3] → [7_u]
+5. [7] buildings + [6] → [7_u_u]
+6. [7_u] buildings + [7_u_u] buildings → [7_u_u_u]
+
+==================================================
+
+Q: Which schools are not within 3 minutes of driving time from a fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] driving time: network
+- [2] 3 minutes service area: serviceObj
+- [3] within 3 minutes of fire station: boolField
+- [4] road data: network/object
+- [5] schools: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire station + [4] road data → [2]
+2. [2] → [3]
+3. [5] schools + [3] → [5_u]
+
+==================================================
+
+Q: What is the nearest fire station to each fire call in Fort Worth
+
+Concepts:
+- [0] fire call: event
+- [1] fire station: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire call → [1]
+
+==================================================
+
+Q: Where are the hurricanes in Oleander in 1977
+
+Concepts:
+- [0] hurricanes: event
+- [1] location of hurricanes: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] hurricanes → [1]
+
+==================================================
+
+Q: What was the trajectory of a hurricane in Oleander in 1977
+
+Concepts:
+- [0] hurricane: event
+- [1] trajectory: event
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] hurricane → [1]
+
+==================================================
+
+Q: Where was the most intense hurricane in Oleander in 1977
+
+Concepts:
+- [0] hurricane: event
+- [1] location of hurricane: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] hurricane → [1]
+
+==================================================
+
+Q: Where was the fastest hurricane in Oleander in 1977
+
+Concepts:
+- [0] hurricane: event
+- [1] location of hurricane: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] hurricane → [1]
+
+==================================================
+
+Q: How many buildings are affected by a hurricane in Oleander
+
+Concepts:
+- [0] hurricane: event
+- [1] buildings: object
+- [2] count of buildings: conamount
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] buildings + [0] hurricane → [1_u]
+2. [1_u] buildings → [2_u_u]
+
+==================================================
+
+Q: Which buildings are affected by a hurricane in Oleander
+
+Concepts:
+- [0] hurricane: event
+- [1] buildings: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] buildings + [0] hurricane → [1_u]
+
+==================================================
+
+Q: How many people are affected by a hurricane in Oleander
+
+Concepts:
+- [0] hurricane: event
+- [1] people: object
+- [2] count of people: conamount
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] people + [0] hurricane → [1_u]
+2. [1_u] people → [2_u_u]
+
+==================================================
+
+Q: Where are the rocky areas in Spain
+
+Concepts:
+- [0] rocky areas: field (nominal)
+- [1] location field: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] rocky areas → [1]
+
+==================================================
+
+Q: What areas do have slope larger than 10 percent in Spain
+
+Concepts:
+- [0] slope: field (ratio)
+- [1] location field: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] slope → [1_u]
+
+==================================================
+
+Q: What areas do have altitude between 700 and 2000 meters in Spain
+
+Concepts:
+- [0] altitude: field (ratio)
+- [1] location field: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] altitude → [1_u]
+
+==================================================
+
+Q: What areas do have temperature in Celsius larger than 0 degrees in Spain
+
+Concepts:
+- [0] temperature in celsius: field (interval)
+- [1] location field: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] temperature in celsius → [1_u]
+
+==================================================
+
+Q: What areas do have precipitation lower than 40 millimeters in Spain
+
+Concepts:
+- [0] precipitation: field (ratio)
+- [1] location field: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] precipitation → [1_u]
+
+==================================================
+
+Q: What areas are at least 3000 meters from the rivers in Spain
+
+Concepts:
+- [0] rivers: object
+- [1] distance to rivers: distField
+- [2] location of rivers: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] rivers → [1]
+2. [1] → [2_u]
+
+==================================================
+
+Q: What areas are more than 5000 meters from the roads in Spain
+
+Concepts:
+- [0] roads: object
+- [1] distance to roads: distField
+- [2] location of roads: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] roads → [1]
+2. [1] → [2_u]
+
+==================================================
+
+Q: What is the predicted distribution probability for the little midwife toad in Spain in 2030
+
+Concepts:
+- [0] little midwife toad: object
+- [1] predicted distribution probability: field (ratio)
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] little midwife toad → [1]
+
+==================================================
+
+Q: Where are the industrial areas in Utrecht
+
+Concepts:
+- [0] industrial areas: field (nominal)
+- [1] location field: location
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] industrial areas → [1]
+
+==================================================
+
+Q: Which park is biggest in Utrecht
+
+Concepts:
+- [0] park: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] park → [0_u]
+
+==================================================
+
+Q: Which freeways do have 4 lanes in Netherlands
+
+Concepts:
+- [0] object0 conAmount: objconamount (era)
+- [1] freeways: object
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [1] freeways + [0] object0 conAmount → [1_u]
+
+==================================================
+
+Q: Which city has the highest crime rate in Netherlands
+
+Concepts:
+- [0] crime rate: eveconobjconpro (ira)
+- [1] city: object
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [1] city + [0] crime rate → [1_u]
+
+==================================================
+
+Q: Which city has the highest population density in Netherlands
+
+Concepts:
+- [0] population density: objconobjcovpro (ira)
+- [1] city: object
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [1] city + [0] population density → [1_u]
+
+==================================================
+
+Q: What areas do not have groundwater in the UK
+
+Concepts:
+- [0] groundwater: field (nominal)
+- [1] location field: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] groundwater → [1_u]
+
+==================================================
+
+Q: What areas do have population density less than 300 per square kilometer in UK
+
+Concepts:
+- [0] population density: objconobjcovpro (ira)
+- [1] location field: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] population density → [1_u]
+
+==================================================
+
+Q: What areas are minimum 3000 meters and maximum 5000 meters from the roads in UK
+
+Concepts:
+- [0] roads: object
+- [1] distance to roads: distField
+- [2] boolean constraint field: boolField
+- [3] distance to roads: distField
+- [4] boolean constraint field: boolField
+- [5] location of roads: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] roads → [1]
+2. [1] → [2]
+3. [3] → [4]
+4. [2] → [5_u]
+5. [4] → [5_u_u]
+6. [5_u] + [5_u_u] → [5_u_u_u]
+
+==================================================
+
+Q: Where are not conservation areas in UK
+
+Concepts:
+- [0] conservation areas: field (nominal)
+- [1] location field: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] conservation areas → [1]
+
+==================================================
+
+Q: Which houses do not have plumbing in Utrecht
+
+Concepts:
+- [0] object1 conAmount: objconamount (era)
+- [1] houses: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [1] houses + [0] object1 conAmount → [1_u]
+
+==================================================
+
+Q: Which emergency vehicle is closest to the accident in Utrecht
+
+Concepts:
+- [0] accident: event
+- [1] emergency vehicle: object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [1] emergency vehicle + [0] accident → [1_u]
+
+==================================================
+
+Q: Where is the best site for a new landfill in UK
+
+Concepts:
+- [0] landfill: object
+- [1] allocation field: allocation
+- [2] location of landfill: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] landfill → [1]
+
+==================================================
+
+Q: Which forestry areas have Norwegian Spruce trees in Europe
+
+Concepts:
+- [0] object0 conAmount: objconamount (era)
+- [1] forestry areas: field (nominal)
+
+Extent:
+- Europe
+
+Transformations:
+1. [1] forestry areas + [0] object0 conAmount → [1_u]
+
+==================================================
+
+Q: Where is the cluster of student residence in Utrecht
+
+Concepts:
+- [0] student residence: object
+- [1] cluster: covamount (loc)
+- [2] location of student residence: location
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] student residence → [1]
+2. [1] cluster → [2]
+
+==================================================
+
+Q: Where is the best site for a landscape conservation park in Zdarske Vrchy
+
+Concepts:
+- [0] landscape conservation park: object
+- [1] allocation field: allocation
+- [2] location of landscape conservation park: location
+
+Extent:
+- Zdarske Vrchy
+
+Transformations:
+1. [0] landscape conservation park → [1]
+
+==================================================
+
+Q: Where are the fire stations in Utrecht
+
+Concepts:
+- [0] fire stations: object
+- [1] location of fire stations: location
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] fire stations → [1]
+
+==================================================
+
+Q: Where are the holiday accommodations within 1000 meters of a windsurfing spot in Italy
+
+Concepts:
+- [0] windsurfing spot: object
+- [1] distance to windsurfing spot: distField
+- [2] within 1000 meters of windsurfing spot: boolField
+- [3] holiday accommodations: object
+- [4] location of holiday accommodations: location
+
+Extent:
+- Italy
+
+Transformations:
+1. [0] windsurfing spot → [1]
+2. [1] → [2]
+3. [3] holiday accommodations + [2] → [3_u]
+4. [3_u] holiday accommodations → [4_u_u]
+
+==================================================
+
+Q: Where are the flat areas within 500 meters of a major highway in the United Kingdom
+
+Concepts:
+- [0] major highway: object
+- [1] distance to major highway: distField
+- [2] within 500 meters of major highway: boolField
+- [3] flat areas: field (nominal)
+- [4] location of major highway: location
+
+Extent:
+- United Kingdom
+
+Transformations:
+1. [0] major highway → [1]
+2. [1] → [2]
+3. [3] flat areas + [2] → [3_u]
+4. [3_u] flat areas → [4_u_u]
+
+==================================================
+
+Q: What is the traffic flow of the A28 motorway in Utrecht
+
+Concepts:
+- [0] traffic flow: network
+- [1] road data: network/object
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] traffic flow → [1]
+
+==================================================
+
+Q: What is the shortest route from the resort center to ski pistes in Happy Valley
+
+Concepts:
+- [0] resort center: object
+- [1] ski pistes: object
+- [2] shortest route: network
+- [3] road data: network/object
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [0] resort center + [1] ski pistes + [3] road data → [2]
+
+==================================================
+
+Q: Where is the best site for a wind farm in Portland
+
+Concepts:
+- [0] wind farm: object
+- [1] allocation field: allocation
+- [2] location of wind farm: location
+
+Extent:
+- Portland
+
+Transformations:
+1. [0] wind farm → [1]
+
+==================================================
+
+Q: Where is the best site for a new retail store in Toronto
+
+Concepts:
+- [0] retail store: object
+- [1] allocation field: allocation
+- [2] location of retail store: location
+
+Extent:
+- Toronto
+
+Transformations:
+1. [0] retail store → [1]
+
+==================================================
+
+Q: What is the land use in Netherlands
+
+Concepts:
+- [0] land use: field (nominal)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [0] land use → [0_u]
+
+==================================================
+
+Q: Where are the commercial areas in Amsterdam
+
+Concepts:
+- [0] commercial areas: field (nominal)
+- [1] location field: location
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] commercial areas → [1]
+
+==================================================
+
+Q: How many luxury hotels are in Happy Valley ski resort
+
+Concepts:
+- [0] luxury hotels: object
+- [1] count of luxury hotels: conamount
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] luxury hotels → [1]
+
+==================================================
+
+Q: Where are the luxury hotels with more than 20 bedrooms in Happy Valley ski resort
+
+Concepts:
+- [0] object1 conAmount: objconamount (era)
+- [1] luxury hotels: object
+- [2] location of luxury hotels: location
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [1] luxury hotels + [0] object1 conAmount → [1_u]
+2. [1_u] luxury hotels → [2_u_u]
+
+==================================================
+
+Q: Where are forestry lands in Happy Valley ski resort
+
+Concepts:
+- [0] forestry lands: field (nominal)
+- [1] location field: location
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] forestry lands → [1]
+
+==================================================
+
+Q: Which hotels are within 0.2 km of the main roads in Happy Valley ski resort
+
+Concepts:
+- [0] main roads: object
+- [1] distance to main roads: distField
+- [2] within 0.2 km of main roads: boolField
+- [3] hotels: object
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] main roads → [1]
+2. [1] → [2]
+3. [3] hotels + [2] → [3_u]
+
+==================================================
+
+Q: Which land use contains meteorological stations in Netherlands
+
+Concepts:
+- [0] meteorological stations: object
+- [1] land use: field (nominal)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [1] land use + [0] meteorological stations → [1_u]
+
+==================================================
+
+Q: Which roads are intersected with forest areas in UK
+
+Concepts:
+- [0] forest areas: field (nominal)
+- [1] roads: object
+
+Extent:
+- UK
+
+Transformations:
+1. [1] roads + [0] forest areas → [1_u]
+
+==================================================
+
+Q: What is the land use in the Happy Valley resort
+
+Concepts:
+- [0] land use: field (nominal)
+
+Extent:
+- Happy Valley resort
+
+Transformations:
+1. [0] land use → [0_u]
+
+==================================================
+
+Q: Where is the best site for a new ski piste in Happy Valley
+
+Concepts:
+- [0] ski piste: object
+- [1] allocation field: allocation
+- [2] location of ski piste: location
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [0] ski piste → [1]
+
+==================================================
+
+Q: What is the predicted probability surface for snowfall in Happy Valley
+
+Concepts:
+- [0] snowfall: event
+- [1] predicted probability surface: field (ratio)
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [0] snowfall → [1]
+
+==================================================
+
+Q: What is the shortest route from the center of the resort to the ski pistes in Happy Valley
+
+Concepts:
+- [0] center: object
+- [1] resort: object
+- [2] ski pistes: object
+- [3] shortest route: network
+- [4] road data: network/object
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [0] center → [1]
+2. [1] resort + [2] ski pistes + [4] road data → [3]
+
+==================================================
+
+Q: What is the slope of the new ski piste in the Happy Valley resort
+
+Concepts:
+- [0] ski piste: object
+- [1] slope: field (ratio)
+
+Extent:
+- Happy Valley resort
+
+Transformations:
+1. [0] ski piste → [1]
+
+==================================================
+
+Q: From where are the wind farms visible in Amsterdam
+
+Concepts:
+- [0] wind farms: object
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] wind farms → [0_u]
+
+==================================================
+
+Q: Which ski pistes are in the avalanche danger zones in Happy Valley
+
+Concepts:
+- [0] avalanche danger zones: field (nominal)
+- [1] ski pistes: object
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [1] ski pistes + [0] avalanche danger zones → [1_u]
+
+==================================================
+
+Q: Where are the accidents within ski pistes in the Happy Valley
+
+Concepts:
+- [0] ski pistes: object
+- [1] accidents: event
+- [2] location of accidents: location
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [1] accidents + [0] ski pistes → [1_u]
+2. [1_u] accidents → [2_u_u]
+
+==================================================
+
+Q: Which visitor facilities are in the Happy Valley
+
+Concepts:
+- [0] visitor facilities: object
+
+Extent:
+- Happy Valley
+
+Transformations:
+1. [0] visitor facilities → [0_u]
+
+==================================================
+
+Q: Which properties are within 1000 meters of an abandoned lead smelter in Oleander
+
+Concepts:
+- [0] abandoned lead smelter: object
+- [1] distance to abandoned lead smelter: distField
+- [2] within 1000 meters of abandoned lead smelter: boolField
+- [3] properties: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] abandoned lead smelter → [1]
+2. [1] → [2]
+3. [3] properties + [2] → [3_u]
+
+==================================================
+
+Q: What areas are affected by a tsunami in Indonesia in 2004
+
+Concepts:
+- [0] tsunami: event
+- [1] location of tsunami: location
+
+Extent:
+- Indonesia
+
+Transformations:
+1. [0] tsunami → [1_u]
+
+==================================================
+
+Q: What areas are within 100 meters of cameras in Salford
+
+Concepts:
+- [0] cameras: object
+- [1] distance to cameras: distField
+- [2] within 100 meters of cameras: boolField
+- [3] location of cameras: location
+
+Extent:
+- Salford
+
+Transformations:
+1. [0] cameras → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: Where is the best site of bus stops that maximize the overall population that are within 600-meters buffer areas in Utrecht
+
+Concepts:
+- [0] buffer areas: field (boolean)
+- [1] distance field: distField
+- [2] boolean constraint field: boolField
+- [3] overall population: objconamount (count)
+- [4] bus stops: object
+- [5] allocation field: allocation
+- [6] location of bus stops: location
+
+Extent:
+- Utrecht
+
+Transformations:
+1. [0] buffer areas → [1]
+2. [1] → [2]
+3. [3] overall population + [2] → [3_u]
+4. [4] bus stops + [3_u] overall population → [4_u_u]
+5. [4_u_u] bus stops → [5_u_u_u]
+
+==================================================
+
+Q: What are the political leaning for each county in the United States
+
+Concepts:
+- [0] county: object
+- [1] political leaning: objectquality (nominal)
+
+Extent:
+- United States
+
+Transformations:
+1. [1] political leaning + [0] county → [1]
+
+==================================================
+
+Q: What is the number of crime cases for each police district in Texas in 2018
+
+Concepts:
+- [0] police district: object
+- [1] crime cases: event
+- [2] number: conamount (count)
+
+Extent:
+- Texas
+
+Transformations:
+1. [1] crime cases + [0] police district → [2]
+
+==================================================
+
+Q: Where is the mean center of households in the Oost district in Amsterdam
+
+Concepts:
+- [0] households: object
+- [1] mean center: covamount (loc)
+- [2] location of households: location
+
+Extent:
+- Oost district
+- Amsterdam
+
+Transformations:
+1. [0] households → [1]
+2. [1] mean center → [2]
+
+==================================================
+
+Q: What is the central feature of bank branches in Oleander
+
+Concepts:
+- [0] bank branches: object
+- [1] central feature: covamount (loc)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] bank branches → [1]
+
+==================================================
+
+Q: What is the mean center of library patrons for each district in Oleander
+
+Concepts:
+- [0] district: object
+- [1] library patrons: object
+- [2] mean center: covamount (loc)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] library patrons + [0] district → [2]
+
+==================================================
+
+Q: What is the mean center of the fire calls weighted by the priority in Fort Worth
+
+Concepts:
+- [0] priority: eventquality (ordinal)
+- [1] fire calls: event
+- [2] mean center: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] priority → [1]
+2. [1] fire calls → [2]
+
+==================================================
+
+Q: What is the mean center of customers weighted by the number of transactions in Oleander city
+
+Concepts:
+- [0] transactions: event
+- [1] number: conamount (count)
+- [2] customers: object
+- [3] mean center: covamount (loc)
+
+Extent:
+- Oleander city
+
+Transformations:
+1. [0] transactions → [1]
+2. [1] number → [2]
+3. [2] customers → [3]
+
+==================================================
+
+Q: What is the central feature of bank branches weighted by the number of employees in Oleander city
+
+Concepts:
+- [0] employees: object
+- [1] number: conamount (count)
+- [2] bank branches: object
+- [3] central feature: covamount (loc)
+
+Extent:
+- Oleander city
+
+Transformations:
+1. [0] employees → [1]
+2. [1] number → [2]
+3. [2] bank branches → [3]
+
+==================================================
+
+Q: Which police stations have fire calls that are outside their alarm territory in Fort Worth
+
+Concepts:
+- [0] alarm territory: object
+- [1] event0 conAmount: eveconamount (era)
+- [2] police stations: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] event0 conAmount + [0] alarm territory → [1_u]
+2. [2] police stations + [1_u] event0 conAmount → [2_u_u]
+
+==================================================
+
+Q: What are the standard distance circles of West Nile Virus in Fort Worth
+
+Concepts:
+- [0] west nile virus: event
+- [1] standard distance circles: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] west nile virus → [1]
+
+==================================================
+
+Q: What is the directional trend of fire calls for each fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] fire calls: event
+- [2] directional trend: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] fire calls + [0] fire station → [2]
+
+==================================================
+
+Q: What is the directional trend of crimes in Amsterdam in 2019
+
+Concepts:
+- [0] crimes: event
+- [1] directional trend: covamount (loc)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] crimes → [1]
+
+==================================================
+
+Q: What is the directional trend of animal migration in the Netherlands
+
+Concepts:
+- [0] animal migration: event
+- [1] directional trend: covamount (loc)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [0] animal migration → [1]
+
+==================================================
+
+Q: Where are the single-family zones in Tarrant County, Texas
+
+Concepts:
+- [0] single family zones: field (nominal)
+- [1] location field: location
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [0] single family zones → [1]
+
+==================================================
+
+Q: What is the total linear mileage of the asphalt streets in Tarrant County in Texas
+
+Concepts:
+- [0] asphalt streets: object
+- [1] total linear mileage: covamount (era)
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [0] asphalt streets → [1]
+
+==================================================
+
+Q: How many arson cases in Fort Worth in February 2004
+
+Concepts:
+- [0] arson cases: event
+- [1] content amount: conamount
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] arson cases → [1]
+
+==================================================
+
+Q: Where are the Hispanic food stores in Tarrant County in Texas
+
+Concepts:
+- [0] hispanic food stores: object
+- [1] location of hispanic food stores: location
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [0] hispanic food stores → [1]
+
+==================================================
+
+Q: What is the median household income for each census block in Tarrant County in Texas
+
+Concepts:
+- [0] census block: object
+- [1] household income: objconamount (era)
+- [2] median: aggre
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] household income + [0] census block → [2]
+
+==================================================
+
+Q: Where are the auto accidents in Tarrant County in Texas
+
+Concepts:
+- [0] auto accidents: event
+- [1] location of auto accidents: location
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [0] auto accidents → [1]
+
+==================================================
+
+Q: What is the total population for each census block in Tarrant County, Texas
+
+Concepts:
+- [0] census block: object
+- [1] total population: objconamount (count)
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] total population + [0] census block → [1]
+
+==================================================
+
+Q: What is the median people age for each census tract in Tarrant County in Texas
+
+Concepts:
+- [0] census tract: object
+- [1] people: object
+- [2] median: aggre
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] people + [0] census tract → [2]
+
+==================================================
+
+Q: What is the construction year for each house in Oleander
+
+Concepts:
+- [0] house: object
+- [1] construction year: objectquality (interval)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] construction year + [0] house → [1]
+
+==================================================
+
+Q: What is the percentage of the Hispanic population to the total population for each census block in Tarrant County in Texas
+
+Concepts:
+- [0] census block: object
+- [1] total population: objconamount (count)
+- [2] hispanic population: objconamount (count)
+- [3] percentage: proportion (ira)
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] total population + [0] census block → [1_u]
+2. [2] hispanic population + [0] census block → [2_u_u]
+3. [1_u] total population + [2_u_u] hispanic population → [3]
+
+==================================================
+
+Q: Which park has the highest proportion of bald eagles to the bird totals in Texas
+
+Concepts:
+- [0] bird totals: objconamount (count)
+- [1] bald eagles: object
+- [2] proportion: proportion (ira)
+- [3] park: object
+
+Extent:
+- Texas
+
+Transformations:
+1. [0] bird totals → [1]
+2. [1] bald eagles → [2]
+3. [3] park + [2] proportion → [3_u]
+
+==================================================
+
+Q: What is the number of tractors for each road in Texas
+
+Concepts:
+- [0] road: object
+- [1] tractors: object
+- [2] number: conamount (count)
+
+Extent:
+- Texas
+
+Transformations:
+1. [1] tractors + [0] road → [2]
+
+==================================================
+
+Q: What is the percentage of owner-occupied houses to the house totals for each census tract in Tarrant County, Texas
+
+Concepts:
+- [0] census tract: object
+- [1] house totals: objconamount (count)
+- [2] owner occupied houses: object
+- [3] percentage: proportion (ira)
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] house totals + [0] census tract → [1_u]
+2. [2] owner occupied houses + [0] census tract → [2_u_u]
+3. [1_u] house totals + [2_u_u] owner occupied houses → [3]
+
+==================================================
+
+Q: What is the crime rate for each police district in Texas in 2019
+
+Concepts:
+- [0] police district: object
+- [1] crime rate: eveconobjconpro (ira)
+
+Extent:
+- Texas
+
+Transformations:
+1. [1] crime rate + [0] police district → [1]
+
+==================================================
+
+Q: What are the vote totals of an election for each precinct in Dallas
+
+Concepts:
+- [0] precinct: object
+- [1] election: event
+- [2] vote totals: eveconamount (count)
+
+Extent:
+- Dallas
+
+Transformations:
+1. [1] election + [0] precinct → [2]
+
+==================================================
+
+Q: What is the population density for each census block in Dallas
+
+Concepts:
+- [0] census block: object
+- [1] population density: objconobjcovpro (ira)
+
+Extent:
+- Dallas
+
+Transformations:
+1. [1] population density + [0] census block → [1]
+
+==================================================
+
+Q: What is the density of robberies for each police beat in Dallas
+
+Concepts:
+- [0] police beat: object
+- [1] robberies: event
+- [2] density: covpro (ira)
+- [3] coverage amount: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Dallas
+
+Transformations:
+1. [0] police beat → [3]
+2. [1] robberies + [0] police beat → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: What is the density of rental units for each census block in Oleander
+
+Concepts:
+- [0] census block: object
+- [1] rental units: object
+- [2] density: covpro (ira)
+- [3] coverage amount: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] census block → [3]
+2. [1] rental units + [0] census block → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: What is the density of rental units in Oleander
+
+Concepts:
+- [0] rental units: object
+- [1] density: covpro (ira)
+- [2] coverage amount: covamount (era)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [extent] → [2]
+2. [0] rental units + [2] → [1]
+
+==================================================
+
+Q: What is the density of registered voters for each precinct in Dallas
+
+Concepts:
+- [0] precinct: object
+- [1] registered voters: object
+- [2] density: covpro (ira)
+- [3] coverage amount: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Dallas
+
+Transformations:
+1. [0] precinct → [3]
+2. [1] registered voters + [0] precinct → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: What is the point density of trees in parks in Oleander
+
+Concepts:
+- [0] parks: object
+- [1] trees: object
+- [2] point density: field (ratio)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] trees + [0] parks → [1_u]
+2. [1_u] trees → [2_u_u]
+
+==================================================
+
+Q: What is the point density of fire calls in Oleander
+
+Concepts:
+- [0] fire calls: event
+- [1] point density: field (ratio)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire calls → [1]
+
+==================================================
+
+Q: What is the density surface of rainfall measurements in the Netherlands
+
+Concepts:
+- [0] rainfall measurements: field (ratio)
+- [1] density surface: field (ratio)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [0] rainfall measurements → [1]
+
+==================================================
+
+Q: What is the density surface of temperature measurements in Oleander city
+
+Concepts:
+- [0] temperature measurements: field (ratio)
+- [1] density surface: field (ratio)
+
+Extent:
+- Oleander city
+
+Transformations:
+1. [0] temperature measurements → [1]
+
+==================================================
+
+Q: What are the directional trends of tornadoes in the Tarrant county from 2010 to 2019
+
+Concepts:
+- [0] tornadoes: event
+- [1] directional trends: covamount (loc)
+
+Extent:
+- Tarrant county
+
+Transformations:
+1. [0] tornadoes → [1]
+
+==================================================
+
+Q: What is the mean direction of freeways in Oleander
+
+Concepts:
+- [0] freeways: object
+- [1] mean direction: covamount (loc)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] freeways → [1]
+
+==================================================
+
+Q: What is the degree of clustering of fire calls in Fort Worth in 2015
+
+Concepts:
+- [0] fire calls: event
+- [1] degree of clustering: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire calls → [1]
+
+==================================================
+
+Q: What is the degree of dispersion of the flu cases in Amsterdam in 2019
+
+Concepts:
+- [0] flu cases: event
+- [1] degree of dispersion: covamount (loc)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] flu cases → [1]
+
+==================================================
+
+Q: What is the degree of clustering of false fire alarms in Fort Worth
+
+Concepts:
+- [0] false fire alarms: event
+- [1] degree of clustering: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] false fire alarms → [1]
+
+==================================================
+
+Q: Where are the clusters of fire alarms with the similar priority in Fort Worth
+
+Concepts:
+- [0] fire alarms: event
+- [1] clusters: covamount (loc)
+- [2] location of fire alarms: location
+
+Extent:
+- (none)
+
+Transformations:
+1. [0] fire alarms → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of census blocks with the similar median household income in Fort Worth
+
+Concepts:
+- [0] census blocks: object
+- [1] clusters: covamount (loc)
+- [2] location of census blocks: location
+
+Extent:
+- (none)
+
+Transformations:
+1. [0] census blocks → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of neighborhoods with the similar crime rate in Amsterdam
+
+Concepts:
+- [0] neighborhoods: object
+- [1] clusters: covamount (loc)
+- [2] location of neighborhoods: location
+
+Extent:
+- (none)
+
+Transformations:
+1. [0] neighborhoods → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: What is the percentage of residential areas inside 1 km area of the central station in Oleander
+
+Concepts:
+- [0] central station: object
+- [1] distance to central station: distField
+- [2] boolean constraint field: boolField
+- [3] residential areas: field (nominal)
+- [4] percentage: proportion (ira)
+- [5] area of central station: covamount (era)
+- [6] area of central station: covamount (era)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] central station → [1]
+2. [1] → [2]
+3. [2] + [3] residential areas → [3_u]
+4. [3_u] residential areas → [5]
+5. [2] → [6]
+6. [5] + [6] → [4]
+
+==================================================
+
+Q: Which properties are within 0.5 km of the Independence Day parade route in Washington D.C.
+
+Concepts:
+- [0] independence day parade route: event
+- [1] distance field: distField
+- [2] boolean constraint field: boolField
+- [3] properties: object
+
+Extent:
+- Washington D.C.
+
+Transformations:
+1. [0] independence day parade route → [1]
+2. [1] → [2]
+3. [3] properties + [2] → [3_u]
+
+==================================================
+
+Q: How many dwelling units are in the flood zones in Oleander
+
+Concepts:
+- [0] flood zones: field (nominal)
+- [1] dwelling units: object
+- [2] count of dwelling units: conamount
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] dwelling units + [0] flood zones → [1_u]
+2. [1_u] dwelling units → [2_u_u]
+
+==================================================
+
+Q: What is the total area of flood zones in Oleander
+
+Concepts:
+- [0] flood zones: field (nominal)
+- [1] total area: covamount (era)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] flood zones → [1]
+
+==================================================
+
+Q: What are the land use inside the flood zones in Oleander
+
+Concepts:
+- [0] flood zones: field (nominal)
+- [1] land use: field (nominal)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] land use + [0] flood zones → [1_u]
+
+==================================================
+
+Q: What is the number of households for each precinct in Dallas County
+
+Concepts:
+- [0] precinct: object
+- [1] households: object
+- [2] number: conamount (count)
+
+Extent:
+- Dallas County
+
+Transformations:
+1. [1] households + [0] precinct → [2]
+
+==================================================
+
+Q: How many high school students are in the school district of senior high schools in Oleander
+
+Concepts:
+- [0] senior high schools: object
+- [1] school district: object
+- [2] high school students: object
+- [3] count of high school students: conamount
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] senior high schools → [1]
+2. [2] high school students + [1] school district → [2_u]
+3. [2_u] high school students → [3_u_u]
+
+==================================================
+
+Q: Which properties are within 100 meters of creeks in Oleander
+
+Concepts:
+- [0] creeks: object
+- [1] distance to creeks: distField
+- [2] within 100 meters of creeks: boolField
+- [3] properties: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] creeks → [1]
+2. [1] → [2]
+3. [3] properties + [2] → [3_u]
+
+==================================================
+
+Q: What areas are within 1000 meters of the schools in Oleander
+
+Concepts:
+- [0] schools: object
+- [1] distance to schools: distField
+- [2] within 1000 meters of schools: boolField
+- [3] location of schools: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] schools → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are within 2000 meters of the playgrounds in Oleander
+
+Concepts:
+- [0] playgrounds: object
+- [1] distance to playgrounds: distField
+- [2] within 2000 meters of playgrounds: boolField
+- [3] location of playgrounds: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] playgrounds → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are within 1000 meters of the arcades in Oleander
+
+Concepts:
+- [0] arcades: object
+- [1] distance to arcades: distField
+- [2] within 1000 meters of arcades: boolField
+- [3] location of arcades: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] arcades → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are within 100 meters of the hospitals in Oleander
+
+Concepts:
+- [0] hospitals: object
+- [1] distance to hospitals: distField
+- [2] within 100 meters of hospitals: boolField
+- [3] location of hospitals: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] hospitals → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What is the percentage of soil type inside 1 km buffer areas of the water wells in Oleander
+
+Concepts:
+- [0] water wells: object
+- [1] buffer areas: field (boolean)
+- [2] distance to water wells: distField
+- [3] boolean constraint field: boolField
+- [4] soil type: field (nominal)
+- [5] percentage: proportion (ira)
+- [6] area of water wells: covamount (era)
+- [7] area of water wells: covamount (era)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] water wells → [1]
+2. [1] buffer areas → [2]
+3. [2] → [3]
+4. [3] + [4] soil type → [4_u]
+5. [4_u] soil type → [6]
+6. [3] → [7]
+7. [6] + [7] → [5]
+
+==================================================
+
+Q: What is the percentage of noise polluted areas in Oleander
+
+Concepts:
+- [0] noise polluted areas: field (nominal)
+- [1] percentage: proportion (ira)
+- [2] coverage amount: covamount (era)
+- [3] coverage amount: covamount (era)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [field 0 nominal] → [2]
+2. [extent] → [3]
+3. [2] + [extent] → [1]
+
+==================================================
+
+Q: Where are the houses within 2640 feet, 5280 feet, and 7920 feet from fire station in Oleander
+
+Concepts:
+- [0] fire station: object
+- [1] distance to fire station: distField
+- [2] boolean constraint field: boolField
+- [3] houses: object
+- [4] location of houses: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire station → [1]
+2. [1] → [2]
+3. [3] houses + [2] → [3_u]
+4. [3_u] houses → [4_u_u]
+
+==================================================
+
+Q: What areas are within 300 meters of runways in Schiphol airport
+
+Concepts:
+- [0] runways: object
+- [1] distance to runways: distField
+- [2] within 300 meters of runways: boolField
+- [3] location of runways: location
+
+Extent:
+- Schiphol airport
+
+Transformations:
+1. [0] runways → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: How many fire calls were answered by a fire station that was not the closest to the fire accidents in Oleander
+
+Concepts:
+- [0] fire accidents: event
+- [1] fire station: object
+- [2] fire calls: event
+- [3] count of fire station: conamount
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] fire station + [0] fire accidents → [1_u]
+2. [2] fire calls + [1_u] fire station → [2_u_u]
+3. [2_u_u] fire calls → [3_u_u_u]
+
+==================================================
+
+Q: Which fire hydrant is closest to the households in Oleander
+
+Concepts:
+- [0] households: object
+- [1] fire hydrant: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] fire hydrant + [0] households → [1_u]
+
+==================================================
+
+Q: What areas are within 3 minutes of driving time from the nearest fire station in Oleander
+
+Concepts:
+- [0] fire station: object
+- [1] driving time: network
+- [2] 3 minutes service area: serviceObj
+- [3] within 3 minutes of fire station: boolField
+- [4] road data: network/object
+- [5] location of fire station: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire station + [4] road data → [2]
+2. [2] → [3]
+3. [3] → [5_u]
+
+==================================================
+
+Q: How many buildings are within 3 minutes of driving time from fire stations in Oleander
+
+Concepts:
+- [0] fire stations: object
+- [1] driving time: network
+- [2] 3 minutes service area: serviceObj
+- [3] within 3 minutes of fire stations: boolField
+- [4] road data: network/object
+- [5] buildings: object
+- [6] count of buildings: conamount
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire stations + [4] road data → [2]
+2. [2] → [3]
+3. [5] buildings + [3] → [5_u]
+4. [5_u] buildings → [6_u_u]
+
+==================================================
+
+Q: Which buildings are located in the fire areas in Oleander
+
+Concepts:
+- [0] fire areas: field (nominal)
+- [1] buildings: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] buildings + [0] fire areas → [1_u]
+
+==================================================
+
+Q: Which buildings were affected by tornado in Oleander
+
+Concepts:
+- [0] tornado: event
+- [1] buildings: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] buildings + [0] tornado → [1_u]
+
+==================================================
+
+Q: What is the walkability for each neighborhood in Ghent
+
+Concepts:
+- [0] neighborhood: object
+- [1] walkability: objectquality (ratio)
+
+Extent:
+- Ghent
+
+Transformations:
+1. [1] walkability + [0] neighborhood → [1]
+
+==================================================
+
+Q: What is the density of residential units for each neighborhood in Ghent
+
+Concepts:
+- [0] neighborhood: object
+- [1] residential units: object
+- [2] density: covpro (ira)
+- [3] coverage amount: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Ghent
+
+Transformations:
+1. [0] neighborhood → [3]
+2. [1] residential units + [0] neighborhood → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: What is the connectivity for each neighborhood in Ghent
+
+Concepts:
+- [0] neighborhood: object
+- [1] connectivity: objectquality (ratio)
+
+Extent:
+- Ghent
+
+Transformations:
+1. [1] connectivity + [0] neighborhood → [1]
+
+==================================================
+
+Q: What is the land use mix for each neighborhood in Ghent
+
+Concepts:
+- [0] neighborhood: object
+- [1] land use mix: objectquality (ratio)
+
+Extent:
+- Ghent
+
+Transformations:
+1. [1] land use mix + [0] neighborhood → [1]
+
+==================================================
+
+Q: What is the bikeability surface in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] bikeability surface: field (ratio)
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] bikeability surface → [0_u]
+
+==================================================
+
+Q: What is the density surface of bicycle route in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] bicycle route: object
+- [1] density surface: field (ratio)
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] bicycle route → [1]
+
+==================================================
+
+Q: Where are the bicycle tracks in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] bicycle tracks: object
+- [1] location of bicycle tracks: location
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] bicycle tracks → [1]
+
+==================================================
+
+Q: What is the density raster of intersections of bicycle-friendly streets in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] bicycle friendly streets: object
+- [1] intersections: object
+- [2] density raster: field (ratio)
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] bicycle friendly streets → [1]
+2. [1] intersections → [2]
+
+==================================================
+
+Q: What is the topography in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] topography: field (ratio)
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] topography → [0_u]
+
+==================================================
+
+Q: What is the point density of cycling destinations in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] cycling destinations: object
+- [1] point density: field (ratio)
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] cycling destinations → [1]
+
+==================================================
+
+Q: What is the network distance from hexagonal grid with 2000 meter to the closest public primary school in the Multifunctional Urban Area of Barcelona
+
+Concepts:
+- [0] hexagonal grid with 2000 meter: grid
+- [1] public primary school: object
+- [2] network distance: network
+- [3] road data: network/object
+
+Extent:
+- Multifunctional Urban Area of Barcelona
+
+Transformations:
+1. [0] hexagonal grid with 2000 meter + [1] public primary school + [3] road data → [2]
+
+==================================================
+
+Q: What is the average network distance for people to public primary schools for each census area in Rotterdam
+
+Concepts:
+- [0] census area: object
+- [1] people: object
+- [2] public primary schools: object
+- [3] network distance: network
+- [4] average: aggre
+- [5] road data: network/object
+
+Extent:
+- Rotterdam
+
+Transformations:
+1. [1] people + [2] public primary schools + [5] road data → [3]
+2. [3] network distance + [0] census area → [4]
+
+==================================================
+
+Q: What is the percentage of population within 1000 meters network distance from hexagonal grids with a diameter of 2000 meters to primary schools in Rotterdam
+
+Concepts:
+- [0] hexagonal grids with diameter of 2000 meters: grid
+- [1] primary schools: object
+- [2] network distance: network
+- [3] service area: serviceObj
+- [4] boolean constraint field: boolField
+- [5] road data: network/object
+- [6] population: objconamount (era)
+- [7] percentage: proportion (ira)
+
+Extent:
+- Rotterdam
+
+Transformations:
+1. [0] hexagonal grids with diameter of 2000 meters + [1] primary schools + [5] road data → [3]
+2. [3] → [4]
+3. [4] + [6] population → [6_u]
+4. [6_u] population + [6] population → [7]
+
+==================================================
+
+Q: What is the network distance to primary schools for children aged between 4 and 12 in Multifunctional Urban Area of Rotterdam
+
+Concepts:
+- [0] children: object
+- [1] primary schools: object
+- [2] network distance: network
+- [3] road data: network/object
+
+Extent:
+- Multifunctional Urban Area of Rotterdam
+
+Transformations:
+1. [0] children + [1] primary schools + [3] road data → [2]
+
+==================================================
+
+Q: What is the average network distance for people to the three closest primary schools for each census area in Rotterdam
+
+Concepts:
+- [0] census area: object
+- [1] people: object
+- [2] primary schools: object
+- [3] network distance: network
+- [4] average: aggre
+- [5] road data: network/object
+
+Extent:
+- Rotterdam
+
+Transformations:
+1. [1] people + [2] primary schools + [5] road data → [3]
+2. [3] network distance + [0] census area → [4]
+
+==================================================
+
+Q: What is the number of people within 1000 meters network distance from hexagonal grids with a diameter of 2000 meters to primary schools in Barcelona
+
+Concepts:
+- [0] hexagonal grids with diameter of 2000 meters: grid
+- [1] primary schools: object
+- [2] network distance: network
+- [3] service area: serviceObj
+- [4] boolean constraint field: boolField
+- [5] road data: network/object
+- [6] people: object
+- [7] number: conamount (count)
+
+Extent:
+- Barcelona
+
+Transformations:
+1. [0] hexagonal grids with diameter of 2000 meters + [1] primary schools + [5] road data → [3]
+2. [3] → [4]
+3. [6] people + [4] → [6_u]
+4. [6_u] people → [7_u_u]
+
+==================================================
+
+Q: Where are the best sites for metro stations in Karbala in Iraq
+
+Concepts:
+- [0] metro stations: object
+- [1] allocation field: allocation
+- [2] location of metro stations: location
+
+Extent:
+- Karbala
+- Iraq
+
+Transformations:
+1. [0] metro stations → [1]
+
+==================================================
+
+Q: What is the travel time from the centroids of municipalities to outpatient services in Tuscany in Italy
+
+Concepts:
+- [0] centroids: object
+- [1] municipalities: object
+- [2] outpatient services: object
+- [3] travel time: network
+- [4] road data: network/object
+
+Extent:
+- Tuscany
+- Italy
+
+Transformations:
+1. [0] centroids → [1]
+2. [1] municipalities + [2] outpatient services + [4] road data → [3]
+
+==================================================
+
+Q: What is the number of inhabitants for each 100 by 100 meter grid in Banten province in Indonesia
+
+Concepts:
+- [0] 100 by 100 meter grid: grid
+- [1] inhabitants: object
+- [2] number: conamount (count)
+
+Extent:
+- Banten province
+- Indonesia
+
+Transformations:
+1. [1] inhabitants + [0] 100 by 100 meter grid → [2]
+
+==================================================
+
+Q: What area are within 50 km from family physician services in Saskatchewan in Canada
+
+Concepts:
+- [0] family physician services: object
+- [1] distance to family physician services: distField
+- [2] within 50 km of family physician services: boolField
+- [3] location of family physician services: location
+
+Extent:
+- Saskatchewan
+- Canada
+
+Transformations:
+1. [0] family physician services → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What is the travel time from the centers of 2 by 2 km grid cells to the closest hospital in Sichuan in China
+
+Concepts:
+- [0] centers: object
+- [1] 2 by 2 km grid cells: grid
+- [2] hospital: object
+- [3] travel time: network
+- [4] road data: network/object
+
+Extent:
+- Sichuan
+- China
+
+Transformations:
+1. [0] centers → [1]
+2. [1] 2 by 2 km grid cells + [2] hospital + [4] road data → [3]
+
+==================================================
+
+Q: What is the percentage of elderly population to the total population for each municipality area in the Aichi prefecture in Japan
+
+Concepts:
+- [0] municipality area: object
+- [1] total population: objconamount (count)
+- [2] elderly population: objconamount (count)
+- [3] percentage: proportion (ira)
+
+Extent:
+- Aichi prefecture
+- Japan
+
+Transformations:
+1. [1] total population + [0] municipality area → [1_u]
+2. [2] elderly population + [0] municipality area → [2_u_u]
+3. [1_u] total population + [2_u_u] elderly population → [3]
+
+==================================================
+
+Q: What is the density of elderly population for each municipality area in Aichi prefecture in Japan
+
+Concepts:
+- [0] municipality area: object
+- [1] elderly population: objconamount (count)
+- [2] density: covpro (ira)
+- [3] area of municipality area: covamount (era)
+
+Extent:
+- Aichi prefecture
+- Japan
+
+Transformations:
+1. [0] municipality area → [3]
+2. [1] elderly population + [0] municipality area → [1_u]
+3. [1_u] elderly population + [0] municipality area → [2]
+
+==================================================
+
+Q: What is the potential geographic access of communities to the sexual and productive health services located in rural areas in Chibuto, Chokwe, Guija and Mandlakaze in Mozambique in 2019
+
+Concepts:
+- [0] rural areas: field (nominal)
+- [1] sexual and productive health services: object
+- [2] communities: object
+- [3] potential geographic access: objectquality (ratio)
+
+Extent:
+- Chibuto
+- Chokwe
+- Guija
+- Mandlakaze
+- Mozambique
+
+Transformations:
+1. [1] sexual and productive health services + [0] rural areas → [1_u]
+2. [1_u] sexual and productive health services → [2]
+3. [2] communities → [3_u_u]
+
+==================================================
+
+Q: Where is the best site for a new landfill in Houston
+
+Concepts:
+- [0] landfill: object
+- [1] allocation field: allocation
+- [2] location of landfill: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] landfill → [1]
+
+==================================================
+
+Q: What areas are not green belt areas in Houston
+
+Concepts:
+- [0] green belt areas: field (nominal)
+- [1] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] green belt areas → [1_u]
+
+==================================================
+
+Q: What areas are outside 3000 meters from turbojet runways in Houston
+
+Concepts:
+- [0] turbojet runways: object
+- [1] distance to turbojet runways: distField
+- [2] boolean constraint field: boolField
+- [3] location of turbojet runways: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] turbojet runways → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are within 800 meter from major highways in Houston
+
+Concepts:
+- [0] major highways: object
+- [1] distance to major highways: distField
+- [2] within 800 meter of major highways: boolField
+- [3] location of major highways: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] major highways → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What is the potential accessibility by local road for each 2 by 2 km grid cell in Finland
+
+Concepts:
+- [0] 2 by 2 km grid cell: grid
+- [1] local road: network
+- [2] potential accessibility: objectquality (ratio)
+
+Extent:
+- Finland
+
+Transformations:
+1. [1] local road + [0] 2 by 2 km grid cell → [2]
+
+==================================================
+
+Q: What is the potential accessibility by regional road for each 2 by 2 km grid cell in Finland
+
+Concepts:
+- [0] 2 by 2 km grid cell: grid
+- [1] regional road: network
+- [2] potential accessibility: objectquality (ratio)
+
+Extent:
+- Finland
+
+Transformations:
+1. [1] regional road + [0] 2 by 2 km grid cell → [2]
+
+==================================================
+
+Q: Where are clusters of pedestrian injuries in Georgia from 2000 to 2007
+
+Concepts:
+- [0] pedestrian injuries: event
+- [1] clusters: covamount (loc)
+- [2] location of pedestrian injuries: location
+
+Extent:
+- Georgia
+
+Transformations:
+1. [0] pedestrian injuries → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of Chinese immigrants in Auckland from 1991 to 2006
+
+Concepts:
+- [0] chinese immigrants: object
+- [1] clusters: covamount (loc)
+- [2] location of chinese immigrants: location
+
+Extent:
+- Auckland
+
+Transformations:
+1. [0] chinese immigrants → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where is the hot spots and cold spots of robberies in Shanghai in January 2009
+
+Concepts:
+- [0] robberies: event
+- [1] cold spots: covamount (loc)
+- [2] hot spots: covamount (loc)
+- [3] location of robberies: location
+
+Extent:
+- Shanghai
+
+Transformations:
+1. [0] robberies → [1]
+2. [1] cold spots → [2]
+3. [2] hot spots → [3]
+
+==================================================
+
+Q: What is the cervix cancer mortality rate of white females for each city in the Western USA from 1970 to 1994
+
+Concepts:
+- [0] city: object
+- [1] white females: object
+- [2] cervix cancer mortality rate: objconobjconpro (ira)
+
+Extent:
+- Western USA
+
+Transformations:
+1. [1] white females + [0] city → [2]
+
+==================================================
+
+Q: What is the interpolation surface of NO2 concentration in Vancouver
+
+Concepts:
+- [0] no2 concentration: field (ratio)
+- [1] interpolation surface: field (ratio)
+
+Extent:
+- Vancouver
+
+Transformations:
+1. [0] no2 concentration → [1]
+
+==================================================
+
+Q: Where are health care facilities in Riverside San Bernardino in California
+
+Concepts:
+- [0] health care facilities: object
+- [1] location of health care facilities: location
+
+Extent:
+- Riverside San Bernardino
+- California
+
+Transformations:
+1. [0] health care facilities → [1]
+
+==================================================
+
+Q: What is the population density for each neighborhood in Riverside San Bernardino in CA
+
+Concepts:
+- [0] neighborhood: object
+- [1] population density: objconobjcovpro (ira)
+
+Extent:
+- Riverside San Bernardino
+- CA
+
+Transformations:
+1. [1] population density + [0] neighborhood → [1]
+
+==================================================
+
+Q: What is the population density for each neighborhoods with no health care facility in Riverside-San Bernardino
+
+Concepts:
+- [0] object1 conAmount: objconamount (era)
+- [1] neighborhoods: object
+- [2] population density: objconobjcovpro (ira)
+
+Extent:
+- Riverside San Bernardino
+
+Transformations:
+1. [1] neighborhoods + [0] object1 conAmount → [1_u]
+2. [2] population density + [1_u] neighborhoods → [2]
+
+==================================================
+
+Q: What land use is on top of sandy soil in the Netherlands
+
+Concepts:
+- [0] sandy soil: field (nominal)
+- [1] land use: field (nominal)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [1] land use + [0] sandy soil → [1_u]
+
+==================================================
+
+Q: What is the aspect of ski pistes in the Happy Valley resort
+
+Concepts:
+- [0] ski pistes: object
+- [1] aspect: field (interval)
+
+Extent:
+- Happy Valley resort
+
+Transformations:
+1. [0] ski pistes → [1]
+
+==================================================
+
+Q: What are the directional trends of animal grazing in the Netherlands
+
+Concepts:
+- [0] animal grazing: event
+- [1] directional trends: covamount (loc)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [0] animal grazing → [1]
+
+==================================================
+
+Q: What is the density surface of crape myrtles in Oleander
+
+Concepts:
+- [0] crape myrtles: object
+- [1] density surface: field (ratio)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] crape myrtles → [1]
+
+==================================================
+
+Q: What is the access score to family physicians services for each Census Consolidated Subdivision in Saskatchewan in Canada
+
+Concepts:
+- [0] census consolidated subdivision: object
+- [1] family physicians services: object
+- [2] access score: objectquality (ratio)
+
+Extent:
+- Saskatchewan
+- Canada
+
+Transformations:
+1. [1] family physicians services + [0] census consolidated subdivision → [2]
+
+==================================================
+
+Q: What is the accessibility index from the centers of 2 by 2 km grid cells to the closest public hospital in Sichuan in China
+
+Concepts:
+- [0] centers: object
+- [1] 2 by 2 km grid cells: grid
+- [2] public hospital: object
+- [3] accessibility index: objectquality (ratio)
+
+Extent:
+- Sichuan
+- China
+
+Transformations:
+1. [0] centers → [1]
+2. [1] 2 by 2 km grid cells + [2] public hospital → [3]
+
+==================================================
+
+Q: What areas are within 10 minutes, 30 minutes, and 60 minutes of driving time from private hospitals in Sichuan in China
+
+Concepts:
+- [0] private hospitals: object
+- [1] driving time: network
+- [2] service area: serviceObj
+- [3] boolean constraint field: boolField
+- [4] road data: network/object
+- [5] location of private hospitals: location
+
+Extent:
+- Sichuan
+- China
+
+Transformations:
+1. [0] private hospitals + [4] road data → [2]
+2. [2] → [3]
+3. [3] → [5_u]
+
+==================================================
+
+Q: What is the travel time from the centers of 2 by 2 km grids to public hospitals in East Sichuan in China
+
+Concepts:
+- [0] centers: object
+- [1] 2 by 2 km grids: grid
+- [2] public hospitals: object
+- [3] travel time: network
+- [4] road data: network/object
+
+Extent:
+- East Sichuan
+- China
+
+Transformations:
+1. [0] centers → [1]
+2. [1] 2 by 2 km grids + [2] public hospitals + [4] road data → [3]
+
+==================================================
+
+Q: What is the kernel density surface of potential geographic access of communities to clinics in Chibuto in Mozambique in 2019
+
+Concepts:
+- [0] clinics: object
+- [1] communities: object
+- [2] potential geographic access: objectquality (ratio)
+- [3] kernel density surface: field (ratio)
+
+Extent:
+- Chibuto
+- Mozambique
+
+Transformations:
+1. [0] clinics → [1]
+2. [1] communities → [2]
+3. [2] potential geographic access → [3]
+
+==================================================
+
+Q: What is the percentage of vacant houses to the house totals in Tarrant County, Texas
+
+Concepts:
+- [0] house totals: objconamount (count)
+- [1] vacant houses: object
+- [2] percentage: proportion (ira)
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+- (none)
+
+==================================================
+
+Q: What is the access score to nurse practitioner services for each Census Consolidated Subdivision in Alberta in Canada
+
+Concepts:
+- [0] census consolidated subdivision: object
+- [1] nurse practitioner services: object
+- [2] access score: objectquality (ratio)
+
+Extent:
+- Alberta
+- Canada
+
+Transformations:
+1. [1] nurse practitioner services + [0] census consolidated subdivision → [2]
+
+==================================================
+
+Q: What is the percentage of population older than 65 for each Census Consolidated Subdivision in Alberta in Canada
+
+Concepts:
+- [0] census consolidated subdivision: object
+- [1] population: objconamount (era)
+- [2] percentage: proportion (ira)
+
+Extent:
+- Alberta
+- Canada
+
+Transformations:
+1. [1] population + [0] census consolidated subdivision → [1_u]
+2. [1_u] population → [2]
+
+==================================================
+
+Q: What is the potential accessibility by national network for each 2 by 2km grid cell in Finland
+
+Concepts:
+- [0] 2 by 2 km grid cell: grid
+- [1] national network: network
+- [2] potential accessibility: objectquality (ratio)
+
+Extent:
+- Finland
+
+Transformations:
+1. [1] national network + [0] 2 by 2 km grid cell → [2]
+
+==================================================
+
+Q: What is the travel time from the centroids of 2 by 2 km grid cells to the nearest railway stations in Finland
+
+Concepts:
+- [0] centroids: object
+- [1] 2 by 2 km grid cells: grid
+- [2] railway stations: object
+- [3] travel time: network
+- [4] road data: network/object
+
+Extent:
+- Finland
+
+Transformations:
+1. [0] centroids → [1]
+2. [1] 2 by 2 km grid cells + [2] railway stations + [4] road data → [3]
+
+==================================================
+
+Q: What is the travel time from the centroids of 2 by 2 km grid cells to the nearest airport in Finland
+
+Concepts:
+- [0] centroids: object
+- [1] 2 by 2 km grid cells: grid
+- [2] airport: object
+- [3] travel time: network
+- [4] road data: network/object
+
+Extent:
+- Finland
+
+Transformations:
+1. [0] centroids → [1]
+2. [1] 2 by 2 km grid cells + [2] airport + [4] road data → [3]
+
+==================================================
+
+Q: What areas do not have natural resources in the UK
+
+Concepts:
+- [0] natural resources: field (nominal)
+- [1] location field: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] natural resources → [1_u]
+
+==================================================
+
+Q: What areas are within 1000 meters of the major transport routes in Amsterdam
+
+Concepts:
+- [0] major transport routes: object
+- [1] distance to major transport routes: distField
+- [2] within 1000 meters of major transport routes: boolField
+- [3] location of major transport routes: location
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] major transport routes → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What is the proportion of people over 65 for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] people: object
+- [2] proportion: proportion (ira)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] people + [0] pc4 area → [1_u]
+2. [1_u] people → [2]
+
+==================================================
+
+Q: What is the density of parks for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] parks: object
+- [2] density: covpro (ira)
+- [3] area of parks: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] pc4 area → [3]
+2. [1] parks + [0] pc4 area → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: What is the average Euclidean distance to parks for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] parks: object
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] parks → [2]
+2. [2] euclidean distance + [0] pc4 area → [3]
+
+==================================================
+
+Q: What is the mean center of the fire calls for each alarm territory in Fort Worth in 2017
+
+Concepts:
+- [0] alarm territory: object
+- [1] fire calls: event
+- [2] mean center: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] fire calls + [0] alarm territory → [2]
+
+==================================================
+
+Q: What is the central feature of fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] central feature: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire station → [1]
+
+==================================================
+
+Q: What is the mean center of crimes weighted by the severity in Fort Worth
+
+Concepts:
+- [0] severity: eventquality (ordinal)
+- [1] crimes: event
+- [2] mean center: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] severity → [1]
+2. [1] crimes → [2]
+
+==================================================
+
+Q: Where is a best site for a radioactive waste site in UK
+
+Concepts:
+- [0] radioactive waste site: object
+- [1] allocation field: allocation
+- [2] location of radioactive waste site: location
+
+Extent:
+- UK
+
+Transformations:
+1. [0] radioactive waste site → [1]
+
+==================================================
+
+Q: Which store has the highest monthly sales in Tarrant County in Texas
+
+Concepts:
+- [0] monthly sales: conamount (era)
+- [1] store: object
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] store + [0] monthly sales → [1_u]
+
+==================================================
+
+Q: Which road has the highest traffic count in Tarrant County in Texas
+
+Concepts:
+- [0] traffic count: objconamount (count)
+- [1] road: object
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] road + [0] traffic count → [1_u]
+
+==================================================
+
+Q: What is the mean center of accidents weighted by priority for each alarm territories in Fort Worth
+
+Concepts:
+- [0] alarm territories: object
+- [1] priority: eventquality (ordinal)
+- [2] accidents: event
+- [3] mean center: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] priority + [0] alarm territories → [3]
+
+==================================================
+
+Q: What is the standard distance circles of fire calls answered by fire stations in Fort Worth
+
+Concepts:
+- [0] fire stations: object
+- [1] fire calls: event
+- [2] standard distance circles: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] fire calls + [0] fire stations → [2]
+
+==================================================
+
+Q: What are the standard distance circles of accidents for each fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] accidents: event
+- [2] standard distance circles: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] accidents + [0] fire station → [2]
+
+==================================================
+
+Q: What are the standard distance circles of fire calls weighted by priority for each fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] priority: eventquality (ordinal)
+- [2] fire calls: event
+- [3] standard distance circles: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] priority + [0] fire station → [3]
+
+==================================================
+
+Q: What is the directional trend of fire calls weighted by priority for each fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] priority: eventquality (ordinal)
+- [2] fire calls: event
+- [3] directional trend: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] priority + [0] fire station → [3]
+
+==================================================
+
+Q: What is the number of Hispanics for each census block in Tarrant County in Texas
+
+Concepts:
+- [0] census block: object
+- [1] hispanics: object
+- [2] number: conamount (count)
+
+Extent:
+- Tarrant County
+- Texas
+
+Transformations:
+1. [1] hispanics + [0] census block → [2]
+
+==================================================
+
+Q: What is the percentage of the bald eagle to the bird totals for each park in Texas
+
+Concepts:
+- [0] park: object
+- [1] bird totals: objconamount (count)
+- [2] bald eagle: object
+- [3] percentage: proportion (ira)
+
+Extent:
+- Texas
+
+Transformations:
+1. [1] bird totals + [0] park → [1_u]
+2. [2] bald eagle + [0] park → [2_u_u]
+3. [1_u] bird totals + [2_u_u] bald eagle → [3]
+
+==================================================
+
+Q: What is the households density for each census block in Fort Worth
+
+Concepts:
+- [0] census block: object
+- [1] households density: objconobjcovpro (ira)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] households density + [0] census block → [1]
+
+==================================================
+
+Q: What is the average neighbor distance to the 7 nearest neighbors for fire alarms in Fort Worth
+
+Concepts:
+- [0] fire alarms: event
+- [1] neighbor distance: covamount (loc)
+- [2] average: aggre
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire alarms → [1]
+2. [1] neighbor distance → [2]
+
+==================================================
+
+Q: What is the degree of clustering of fire alarms weighted by priority for each 60 meters distance band in Fort Worth
+
+Concepts:
+- [0] 60 meters distance band: distanceBand
+- [1] priority: eventquality (ordinal)
+- [2] fire alarms: event
+- [3] degree of clustering: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] priority + [0] 60 meters distance band → [3]
+
+==================================================
+
+Q: What is the degree of clustering of fire alarms weighted by priority rankings for each distance band from 60 to 600 meters by 30 meter increments in Fort Worth
+
+Concepts:
+- [0] distance band from 60 to 600 meters by 30 meter increments: distanceBand
+- [1] priority rankings: eventquality (ordinal)
+- [2] fire alarms: event
+- [3] degree of clustering: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] priority rankings + [0] distance band from 60 to 600 meters by 30 meter increments → [3]
+
+==================================================
+
+Q: How many fire calls are inside 150 by 150 meters grid cell in Fort Worth
+
+Concepts:
+- [0] 150 by 150 meters grid cell: grid
+- [1] fire calls: event
+- [2] content amount: conamount
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] fire calls + [0] 150 by 150 meters grid cell → [1_u]
+2. [1_u] fire calls → [2_u_u]
+
+==================================================
+
+Q: What is the degree of clustering of fire alarms density for each 300 meter distance band in Fort Worth
+
+Concepts:
+- [0] 300 meter distance band: distanceBand
+- [1] fire alarms density: eveconobjcovpro (ira)
+- [2] degree of clustering: covamount (loc)
+- [3] coverage amount: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] 300 meter distance band → [3]
+2. [1] fire alarms density + [0] 300 meter distance band → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: Where are the clusters of fire alarms with similar priority for each 300 meter distance band in Fort Worth
+
+Concepts:
+- [0] fire alarms: event
+- [1] clusters: covamount (loc)
+- [2] location of fire alarms: location
+
+Extent:
+- (none)
+
+Transformations:
+1. [0] fire alarms → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Which houses are within 2 minutes driving time from fire stations in Oleander
+
+Concepts:
+- [0] fire stations: object
+- [1] driving time: network
+- [2] 2 minutes service area: serviceObj
+- [3] boolean constraint field: boolField
+- [4] road data: network/object
+- [5] houses: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire stations + [4] road data → [2]
+2. [2] → [3]
+3. [5] houses + [3] → [5_u]
+
+==================================================
+
+Q: Which houses are within 3 minutes driving time from the nearest fire station in Oleander
+
+Concepts:
+- [0] fire station: object
+- [1] driving time: network
+- [2] 3 minutes service area: serviceObj
+- [3] boolean constraint field: boolField
+- [4] road data: network/object
+- [5] houses: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire station + [4] road data → [2]
+2. [2] → [3]
+3. [5] houses + [3] → [5_u]
+
+==================================================
+
+Q: What is the Euclidean distance to hospitals in Oleander
+
+Concepts:
+- [0] hospitals: object
+- [1] euclidean distance: field (ratio)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] hospitals → [1]
+
+==================================================
+
+Q: What areas are within 20 minutes driving time from flower stores in Oleander
+
+Concepts:
+- [0] flower stores: object
+- [1] driving time: network
+- [2] 20 minutes service area: serviceObj
+- [3] boolean constraint field: boolField
+- [4] road data: network/object
+- [5] location of flower stores: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] flower stores + [4] road data → [2]
+2. [2] → [3]
+3. [3] → [5_u]
+
+==================================================
+
+Q: Which warehouse is closest to each household in Oleander
+
+Concepts:
+- [0] household: object
+- [1] warehouse: object
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] warehouse + [0] household → [1_u]
+
+==================================================
+
+Q: Where are the tornado touchdowns in Oleander in April 2011
+
+Concepts:
+- [0] tornado touchdowns: event
+- [1] location of tornado touchdowns: location
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] tornado touchdowns → [1]
+
+==================================================
+
+Q: What is the tornado path in Oleander in April 2011
+
+Concepts:
+- [0] tornado path: event
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] tornado path → [0_u]
+
+==================================================
+
+Q: What is a hurricane trajectory in Texas
+
+Concepts:
+- [0] hurricane trajectory: event
+
+Extent:
+- Texas
+
+Transformations:
+1. [0] hurricane trajectory → [0_u]
+
+==================================================
+
+Q: What is the intensity of a hurricane in Texas
+
+Concepts:
+- [0] hurricane: event
+- [1] intensity: eventquality (ratio)
+
+Extent:
+- Texas
+
+Transformations:
+1. [0] hurricane → [1]
+
+==================================================
+
+Q: What is the mean center of crimes in Amsterdam in 2019
+
+Concepts:
+- [0] crimes: event
+- [1] mean center: covamount (loc)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] crimes → [1]
+
+==================================================
+
+Q: What is the degree of clustering of 911 calls for each distance band from 300 to 900 meters by 60 meter increments in Portland
+
+Concepts:
+- [0] distance band from 300 to 900 meters by 60 meter increments: distanceBand
+- [1] 911 calls: event
+- [2] degree of clustering: covamount (loc)
+
+Extent:
+- Portland
+
+Transformations:
+1. [1] 911 calls + [0] distance band from 300 to 900 meters by 60 meter increments → [2]
+
+==================================================
+
+Q: What is the average network distance to hospitals from household for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] household: object
+- [2] hospitals: object
+- [3] network distance: network
+- [4] average: aggre
+- [5] road data: network/object
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] household + [2] hospitals + [5] road data → [3]
+2. [3] network distance + [0] pc4 area → [4]
+
+==================================================
+
+Q: What is the average construction year of buildings for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] buildings: object
+- [2] construction year: objectquality (interval)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] buildings → [2]
+2. [2] construction year + [0] pc4 area → [3]
+
+==================================================
+
+Q: What is the average Euclidean distance to hospitals per PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] hospitals: object
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] hospitals → [2]
+2. [2] euclidean distance + [0] pc4 area → [3]
+
+==================================================
+
+Q: What is the number of elderly people for each neighborhood in Amsterdam
+
+Concepts:
+- [0] neighborhood: object
+- [1] elderly people: object
+- [2] number: conamount (count)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] elderly people + [0] neighborhood → [2]
+
+==================================================
+
+Q: What is the density of green roofs for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] green roofs: object
+- [2] density: covpro (ira)
+- [3] area of green roofs: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] pc4 area → [3]
+2. [1] green roofs + [0] pc4 area → [4]
+3. [4] + [3] → [2]
+
+==================================================
+
+Q: What is the average income of households for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] income of households: objconamount (era)
+- [2] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] income of households + [0] pc4 area → [2]
+
+==================================================
+
+Q: What is the percentage of seriously lonely people for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] seriously lonely people: object
+- [2] percentage: proportion (ira)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] seriously lonely people + [0] pc4 area → [1_u]
+2. [1_u] seriously lonely people → [2]
+
+==================================================
+
+Q: What is the Euclidean distance to green areas in Amsterdam
+
+Concepts:
+- [0] green areas: field (nominal)
+- [1] euclidean distance: field (ratio)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] green areas → [1]
+
+==================================================
+
+Q: What is the average Euclidean distance to green areas per PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] green areas: field (nominal)
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] green areas → [2]
+2. [2] euclidean distance + [0] pc4 area → [3]
+
+==================================================
+
+Q: What is the average Euclidean distance to residential care complexes per PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] residential care complexes: object
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] residential care complexes → [2]
+2. [2] euclidean distance + [0] pc4 area → [3]
+
+==================================================
+
+Q: What is the Safety Index for each district in Amsterdam
+
+Concepts:
+- [0] district: object
+- [1] safety index: objectquality (ratio)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] safety index + [0] district → [1]
+
+==================================================
+
+Q: What is the number of sport facilities in a 1000 square meters circle per neighborhood in Amsterdam
+
+Concepts:
+- [0] neighborhood: object
+- [1] sport facilities: object
+- [2] number: conamount (count)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] sport facilities + [0] neighborhood → [2]
+
+==================================================
+
+Q: What is the Euclidean distance to subway stations in Amsterdam
+
+Concepts:
+- [0] subway stations: object
+- [1] euclidean distance: field (ratio)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] subway stations → [1]
+
+==================================================
+
+Q: What is the average Euclidean distance to subway stations per neighborhood in Amsterdam
+
+Concepts:
+- [0] neighborhood: object
+- [1] subway stations: object
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] subway stations → [2]
+2. [2] euclidean distance + [0] neighborhood → [3]
+
+==================================================
+
+Q: What is the Euclidean distance to tram stations in Amsterdam
+
+Concepts:
+- [0] tram stations: object
+- [1] euclidean distance: field (ratio)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] tram stations → [1]
+
+==================================================
+
+Q: What is the average Euclidean distance to a tram station per neighborhood in Amsterdam
+
+Concepts:
+- [0] neighborhood: object
+- [1] tram station: object
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] tram station → [2]
+2. [2] euclidean distance + [0] neighborhood → [3]
+
+==================================================
+
+Q: What is the tree density for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] tree density: objconobjcovpro (ira)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] tree density + [0] pc4 area → [1]
+
+==================================================
+
+Q: What is the average urban heat island effect for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] urban heat island effect: field (ratio)
+- [2] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] urban heat island effect + [0] pc4 area → [2]
+
+==================================================
+
+Q: What is the WOZ-waarde for each neighborhood in Amsterdam
+
+Concepts:
+- [0] neighborhood: object
+- [1] woz waarde: conamount (era)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] woz waarde + [0] neighborhood → [1]
+
+==================================================
+
+Q: What is the wall plant density for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] wall plant density: objconobjcovpro (ira)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] wall plant density + [0] pc4 area → [1]
+
+==================================================
+
+Q: What is the percentage of water areas for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] water areas: field (nominal)
+- [2] percentage: proportion (ira)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] water areas + [0] pc4 area → [1_u]
+2. [1_u] water areas → [2]
+
+==================================================
+
+Q: What is the percentage of population between 16 and 24 years to the total population per neighborhood in Amsterdam
+
+Concepts:
+- [0] neighborhood: object
+- [1] total population: objconamount (count)
+- [2] population: objconamount (era)
+- [3] percentage: proportion (ira)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [2] population + [0] neighborhood → [2_u]
+2. [2_u] population → [3]
+
+==================================================
+
+Q: Which buildings are not within 1 minute of driving time from a fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] driving time: network
+- [2] 1 minute service area: serviceObj
+- [3] within 1 minute of fire station: boolField
+- [4] road data: network/object
+- [5] buildings: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] fire station + [4] road data → [2]
+2. [2] → [3]
+3. [5] buildings + [3] → [5_u]
+
+==================================================
+
+Q: Which fire station is closest to the fire calls in Fort Worth
+
+Concepts:
+- [0] fire calls: event
+- [1] fire station: object
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] fire station + [0] fire calls → [1_u]
+
+==================================================
+
+Q: What is the number of buildings affected by a hurricane in Oleander
+
+Concepts:
+- [0] hurricane: event
+- [1] buildings: object
+- [2] number: conamount (count)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] buildings + [0] hurricane → [1_u]
+2. [1_u] buildings → [2_u_u]
+
+==================================================
+
+Q: What is the number of people affected by a hurricane in Oleander
+
+Concepts:
+- [0] hurricane: event
+- [1] people: object
+- [2] number: conamount (count)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] people + [0] hurricane → [1_u]
+2. [1_u] people → [2_u_u]
+
+==================================================
+
+Q: What areas are outside 3000 meters of the rivers in Spain
+
+Concepts:
+- [0] rivers: object
+- [1] distance to rivers: distField
+- [2] boolean constraint field: boolField
+- [3] location of rivers: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] rivers → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are outside 5000 meters of the roads in Spain
+
+Concepts:
+- [0] roads: object
+- [1] distance to roads: distField
+- [2] boolean constraint field: boolField
+- [3] location of roads: location
+
+Extent:
+- Spain
+
+Transformations:
+1. [0] roads → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What is the number of luxury hotels in Happy Valley ski resort
+
+Concepts:
+- [0] luxury hotels: object
+- [1] number: conamount (count)
+
+Extent:
+- Happy Valley ski resort
+
+Transformations:
+1. [0] luxury hotels → [1]
+
+==================================================
+
+Q: What is the number of arson cases in Fort Worth on February 2004
+
+Concepts:
+- [0] arson cases: event
+- [1] number: conamount (count)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [0] arson cases → [1]
+
+==================================================
+
+Q: What is the number of election votes for each precinct in Dallas
+
+Concepts:
+- [0] precinct: object
+- [1] election votes: event
+- [2] number: conamount (count)
+
+Extent:
+- Dallas
+
+Transformations:
+1. [1] election votes + [0] precinct → [2]
+
+==================================================
+
+Q: What is the number of dwelling units inside the flood zones in Oleander
+
+Concepts:
+- [0] flood zones: field (nominal)
+- [1] dwelling units: object
+- [2] number: conamount (count)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] dwelling units + [0] flood zones → [1_u]
+2. [1_u] dwelling units → [2_u_u]
+
+==================================================
+
+Q: What is the number of high school students for each senior high school district in Oleander
+
+Concepts:
+- [0] senior high school district: object
+- [1] high school students: object
+- [2] number: conamount (count)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [1] high school students + [0] senior high school district → [2]
+
+==================================================
+
+Q: What is the number of buildings within 3 minutes of driving time from fire stations in Oleander
+
+Concepts:
+- [0] fire stations: object
+- [1] driving time: network
+- [2] 3 minutes service area: serviceObj
+- [3] within 3 minutes of fire stations: boolField
+- [4] road data: network/object
+- [5] buildings: object
+- [6] number: conamount (count)
+
+Extent:
+- Oleander
+
+Transformations:
+1. [0] fire stations + [4] road data → [2]
+2. [2] → [3]
+3. [5] buildings + [3] → [5_u]
+4. [5_u] buildings → [6_u_u]
+
+==================================================
+
+Q: Where are the off street paths in the Metro Vancouver region in Canada
+
+Concepts:
+- [0] off street paths: object
+- [1] location of off street paths: location
+
+Extent:
+- Metro Vancouver region
+- Canada
+
+Transformations:
+1. [0] off street paths → [1]
+
+==================================================
+
+Q: What land use areas are intersected with sandy soil in the Netherlands
+
+Concepts:
+- [0] sandy soil: field (nominal)
+- [1] land use areas: field (nominal)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [1] land use areas + [0] sandy soil → [1_u]
+
+==================================================
+
+Q: What is the degree of dispersion for fire calls for each fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] fire calls: event
+- [2] degree of dispersion: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] fire calls + [0] fire station → [2]
+
+==================================================
+
+Q: What is the degree of dispersion for fire calls weighted by priority for each fire station in Fort Worth
+
+Concepts:
+- [0] fire station: object
+- [1] priority: eventquality (ordinal)
+- [2] fire calls: event
+- [3] degree of dispersion: covamount (loc)
+
+Extent:
+- Fort Worth
+
+Transformations:
+1. [1] priority + [0] fire station → [3]
+
+==================================================
+
+Q: What is the percentage of elderly population to the total population for each 1 km grid in the Aichi prefecture in Japan
+
+Concepts:
+- [0] 1 km grid: grid
+- [1] total population: objconamount (count)
+- [2] elderly population: objconamount (count)
+- [3] percentage: proportion (ira)
+
+Extent:
+- Aichi prefecture
+- Japan
+
+Transformations:
+1. [1] total population + [0] 1 km grid → [1_u]
+2. [2] elderly population + [0] 1 km grid → [2_u_u]
+3. [1_u] total population + [2_u_u] elderly population → [3]
+
+==================================================
+
+Q: What is the population for each city in Aichi prefecture in Japan
+
+Concepts:
+- [0] city: object
+- [1] population: objconamount (era)
+
+Extent:
+- Aichi prefecture
+- Japan
+
+Transformations:
+1. [1] population + [0] city → [1]
+
+==================================================
+
+Q: What is the density of elderly population for each 500 meters grid in Aichi prefecture in Japan
+
+Concepts:
+- [0] 500 meters grid: grid
+- [1] elderly population: objconamount (count)
+- [2] density: covpro (ira)
+- [3] coverage amount: covamount (era)
+
+Extent:
+- Aichi prefecture
+- Japan
+
+Transformations:
+1. [0] 500 meters grid → [3]
+2. [1] elderly population + [0] 500 meters grid → [1_u]
+3. [1_u] elderly population + [0] 500 meters grid → [2]
+
+==================================================
+
+Q: What is the lung cancer mortality rate of white males for each city in the Western USA from 1970 to 1994
+
+Concepts:
+- [0] city: object
+- [1] white males: object
+- [2] lung cancer mortality rate: objconobjconpro (ira)
+
+Extent:
+- Western USA
+
+Transformations:
+1. [1] white males + [0] city → [2]
+
+==================================================
+
+Q: Where is the hot spots and cold spots of thefts in Shanghai in December 2009
+
+Concepts:
+- [0] thefts: event
+- [1] cold spots: covamount (loc)
+- [2] hot spots: covamount (loc)
+- [3] location of thefts: location
+
+Extent:
+- Shanghai
+
+Transformations:
+1. [0] thefts → [1]
+2. [1] cold spots → [2]
+3. [2] hot spots → [3]
+
+==================================================
+
+Q: What is the number of injured pedestrians for each census tract in Georgia from 2000 to 2007
+
+Concepts:
+- [0] census tract: object
+- [1] injured pedestrians: object
+- [2] number: conamount (count)
+
+Extent:
+- Georgia
+
+Transformations:
+1. [1] injured pedestrians + [0] census tract → [2]
+
+==================================================
+
+Q: Where are the clusters of Indian immigrants in Auckland from 1991 to 2006
+
+Concepts:
+- [0] indian immigrants: object
+- [1] clusters: covamount (loc)
+- [2] location of indian immigrants: location
+
+Extent:
+- Auckland
+
+Transformations:
+1. [0] indian immigrants → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of Korean immigrants in Auckland from 1991 to 2007
+
+Concepts:
+- [0] korean immigrants: object
+- [1] clusters: covamount (loc)
+- [2] location of korean immigrants: location
+
+Extent:
+- Auckland
+
+Transformations:
+1. [0] korean immigrants → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of Filipino immigrants in Auckland from 1991 to 2008
+
+Concepts:
+- [0] filipino immigrants: object
+- [1] clusters: covamount (loc)
+- [2] location of filipino immigrants: location
+
+Extent:
+- Auckland
+
+Transformations:
+1. [0] filipino immigrants → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of Japanese immigrants in Auckland from 1991 to 2009
+
+Concepts:
+- [0] japanese immigrants: object
+- [1] clusters: covamount (loc)
+- [2] location of japanese immigrants: location
+
+Extent:
+- Auckland
+
+Transformations:
+1. [0] japanese immigrants → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: Where are the clusters of Cambodian immigrants in Auckland from 1991 to 2010
+
+Concepts:
+- [0] cambodian immigrants: object
+- [1] clusters: covamount (loc)
+- [2] location of cambodian immigrants: location
+
+Extent:
+- Auckland
+
+Transformations:
+1. [0] cambodian immigrants → [1]
+2. [1] clusters → [2]
+
+==================================================
+
+Q: What is the number of inhabitants for each village in Banten province in Indonesia
+
+Concepts:
+- [0] village: object
+- [1] inhabitants: object
+- [2] number: conamount (count)
+
+Extent:
+- Banten province
+- Indonesia
+
+Transformations:
+1. [1] inhabitants + [0] village → [2]
+
+==================================================
+
+Q: What areas are outside 300 meters from streams in Houston
+
+Concepts:
+- [0] streams: object
+- [1] distance to streams: distField
+- [2] boolean constraint field: boolField
+- [3] location of streams: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] streams → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are not park in Houston
+
+Concepts:
+- [0] park: object
+- [1] location of park: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] park → [1_u]
+
+==================================================
+
+Q: What areas are outside 155 meters from nature reserve districts in Houston
+
+Concepts:
+- [0] nature reserve districts: field (nominal)
+- [1] distance field: distField
+- [2] boolean constraint field: boolField
+- [3] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] nature reserve districts → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are outside 155 meters from endangered species areas in Houston
+
+Concepts:
+- [0] endangered species areas: field (nominal)
+- [1] distance field: distField
+- [2] boolean constraint field: boolField
+- [3] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] endangered species areas → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are outside 155 meters from developed areas in Houston
+
+Concepts:
+- [0] developed areas: field (nominal)
+- [1] distance field: distField
+- [2] boolean constraint field: boolField
+- [3] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] developed areas → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are not wetlands in Houston
+
+Concepts:
+- [0] wetlands: field (nominal)
+- [1] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] wetlands → [1_u]
+
+==================================================
+
+Q: What areas are outside 60 meters from water body in Houston
+
+Concepts:
+- [0] water body: field (nominal)
+- [1] distance field: distField
+- [2] boolean constraint field: boolField
+- [3] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] water body → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are outside 60 meters from residence in Houston
+
+Concepts:
+- [0] residence: object
+- [1] distance to residence: distField
+- [2] boolean constraint field: boolField
+- [3] location of residence: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] residence → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are outside 150 meters from hospitals in Houston
+
+Concepts:
+- [0] hospitals: object
+- [1] distance to hospitals: distField
+- [2] boolean constraint field: boolField
+- [3] location of hospitals: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] hospitals → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are outside 150 meters from schools in Houston
+
+Concepts:
+- [0] schools: object
+- [1] distance to schools: distField
+- [2] boolean constraint field: boolField
+- [3] location of schools: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] schools → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are not hurricane areas in Houston
+
+Concepts:
+- [0] hurricane areas: field (nominal)
+- [1] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] hurricane areas → [1_u]
+
+==================================================
+
+Q: What areas are not flood plain in Houston
+
+Concepts:
+- [0] location field: location
+
+Extent:
+- Houston
+
+Transformations:
+1. [0] → [0_u]
+
+==================================================
+
+Q: What areas are within 500 meters from universities in Karbala in Iraq
+
+Concepts:
+- [0] universities: object
+- [1] distance to universities: distField
+- [2] within 500 meters of universities: boolField
+- [3] location of universities: location
+
+Extent:
+- Karbala
+- Iraq
+
+Transformations:
+1. [0] universities → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: What areas are within 500 meters from religious places in Karbala in Iraq
+
+Concepts:
+- [0] religious places: object
+- [1] distance to religious places: distField
+- [2] within 500 meters of religious places: boolField
+- [3] location of religious places: location
+
+Extent:
+- Karbala
+- Iraq
+
+Transformations:
+1. [0] religious places → [1]
+2. [1] → [2]
+3. [2] → [3_u]
+
+==================================================
+
+Q: Which hospitals are within 15 minute driving time of an accident in New York
+
+Concepts:
+- [0] accident: event
+- [1] driving time: network
+- [2] 15 minute service area: serviceObj
+- [3] boolean constraint field: boolField
+- [4] road data: network/object
+- [5] hospitals: object
+
+Extent:
+- New York
+
+Transformations:
+1. [0] accident + [4] road data → [2]
+2. [2] → [3]
+3. [5] hospitals + [3] → [5_u]
+
+==================================================
+
+Q: What is the average Euclidean distance to the nearest supermarket for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] supermarket: object
+- [2] euclidean distance: field (ratio)
+- [3] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] supermarket → [2]
+2. [2] euclidean distance + [0] pc4 area → [3]
+
+==================================================
+
+Q: What is the average noise level for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] noise level: field (ordinal)
+- [2] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] noise level + [0] pc4 area → [2]
+
+==================================================
+
+Q: What is the average temperature for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] temperature: field (ratio)
+- [2] average: aggre
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [1] temperature + [0] pc4 area → [2]
+
+==================================================
+
+Q: What is the total area of agriculture in Netherlands
+
+Concepts:
+- [0] agriculture: field (nominal)
+- [1] total area: covamount (era)
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [0] agriculture → [1]
+
+==================================================
+
+Q: What area do have elevation higher than 30 meters in Netherlands
+
+Concepts:
+- [0] elevation: field (ratio)
+- [1] location field: location
+
+Extent:
+- Netherlands
+
+Transformations:
+1. [0] elevation → [1_u]
+
+==================================================
+
+Q: What is the density of greens for each PC4 area in Amsterdam
+
+Concepts:
+- [0] pc4 area: object
+- [1] greens: field (nominal)
+- [2] density: covpro (ira)
+- [3] area of pc4 area: covamount (era)
+- [4] amount field: amount (era)
+
+Extent:
+- Amsterdam
+
+Transformations:
+1. [0] pc4 area → [3]
+2. [1] greens + [0] pc4 area → [4]
+3. [4] + [3] → [2]
+

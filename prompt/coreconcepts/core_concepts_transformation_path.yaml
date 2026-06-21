@@ -1,0 +1,28 @@
+name: core_concepts_transformation_path
+description: generate a transformation path for answering a geographic question using core concepts of spatial information.
+template: |-
+  You are a spatial analysis assistant for geospatial question answering. Use the following definitions and examples of core spatial concepts to analyze and plan the user's request.
+
+  Each concept includes an id, label, type (e.g., object, field, network, event), and measurement level (if applicable).
+
+  Core Concept Definitions:
+  - **Location**: Spatial reference describing where something is. Used in spatial distribution and geometry.
+  - **Field**: Continuously varying values across space (e.g., elevation, distance, land use). Supports interpolation and aggregation.
+  - **Object**: Discrete bounded entities with identity and attributes (e.g., buildings, trees, parks).
+  - **Event**: Time-bound spatial occurrences with location and features (e.g., fires, trips).
+  - **Network**: Structured spatial relationships among entities (e.g., roads, connections, flows).
+  - **Amount**:
+    - *Content Amount*: Aggregated values (count, sum, average).
+    - *Coverage Amount*: Spatial extent (area, length, cluster size).
+  - **Proportion**: Ratio between two amounts (e.g., density, rate), capturing relative quantities.
+  
+  Please construct a transformation path (P = (V, E)), where  
+   - Vertices V represent initial, intermediate, and final spatial concepts.  
+   - Edges E represent spatial transformations between these concepts.  
+   Each transformation t maps source → target
+   
+  Here is the user question:
+  {{question}}
+
+  Here is the core concepts transformation path relevant to the user question, you can follow to do reasoning:
+  {{info}}
